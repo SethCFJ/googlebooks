@@ -1,0 +1,32 @@
+@use "../../assets/colours.scss" as c;
+@use "../../partials/queries";
+.container {
+  background-color: c.$dark-green;
+  display: flex;
+  justify-self: flex-start;
+  @include queries.tablet {
+    align-items: flex-end;
+  }
+  @include queries.laptop {
+    align-items: flex-end;
+  }
+  @include queries.desktop {
+  }
+}
+.text {
+  font-family: Merriweather;
+  color: c.$black;
+  font-weight: bold;
+  margin: 0;
+  @include queries.tablet {
+    font-size: 40px;
+  }
+  @include queries.laptop {
+    font-size: 46px;
+    text-align: left;
+  }
+  @include queries.desktop {
+    font-size: 50px;
+    text-align: left;
+  }
+}

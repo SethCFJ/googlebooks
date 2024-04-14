@@ -1,0 +1,26 @@
+@use "../../assets/colours.scss" as c;
+@use "../../partials/queries";
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+  padding: 10px;
+  background-color: c.$dark-green;
+  border-bottom: 2px solid black;
+  text-align: center;
+  gap: 10px;
+
+  @include queries.laptop {
+    flex-direction: row;
+    align-items: flex-end;
+    height: 100px;
+  }
+  @include queries.desktop {
+    flex-direction: row;
+    align-items: flex-end;
+    height: 100px;
+  }
+}

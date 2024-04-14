@@ -1,0 +1,73 @@
+@use "../../assets/colours.scss" as c;
+@use "../../partials/queries";
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  padding: 0;
+
+  @include queries.laptop {
+    flex-direction: row;
+  }
+  @include queries.desktop {
+    flex-direction: row;
+  }
+}
+
+.card {
+  border: 3px solid black;
+  padding: 5px;
+  height: 200px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background-color: c.$blue;
+  font-family: Poppins;
+  box-shadow: 2px 2px 2px black;
+  overflow: hidden;
+  @include queries.laptop {
+    width: 300px;
+    height: 200px;
+    justify-content: space-evenly;
+
+    padding: 30px;
+    margin: 10px;
+  }
+  @include queries.desktop {
+    width: 600px;
+    height: 250px;
+    justify-content: space-evenly;
+
+    padding: 20px;
+  }
+  &__imgContainer {
+    min-height: 120px;
+    max-height: 200px;
+    @include queries.laptop {
+      max-height: 260px;
+    }
+    @include queries.desktop {
+      min-height: 200px;
+      max-height: 260px;
+    }
+  }
+  &__text {
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 90%;
+    scrollbar-width: thin;
+    scrollbar-color: c.$dark-green c.$brown;
+
+    &__title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    &__authorList {
+    }
+  }
+}
