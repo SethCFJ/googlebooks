@@ -22,7 +22,7 @@ const BookLoader = ({ searchTerm }) => {
   return (
     <>
       {isLoading && <img className={styles.spinner} src={spinner} />}
-      {!isLoading && error && <p>{error.message}</p>}
+      {!isLoading && error && <p className={styles.error}>{error.message}</p>}
       {!isLoading && bookData && <BookCards bookData={bookData} />}
     </>
   );
