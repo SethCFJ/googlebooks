@@ -33,11 +33,9 @@ const BookCards = ({ bookData }) => {
                   <li key={author}>{author}</li>
                 ))}
             </ul>
-            {data.volumeInfo.description && <h4>Description:</h4>}
-            {data.volumeInfo.description && (
-              <p>{data.volumeInfo.description}</p>
-            )}
+
             <button
+              className={styles.button}
               onClick={() => {
                 setModal(true);
                 setModalInfo(data);
@@ -56,6 +54,7 @@ const BookCards = ({ bookData }) => {
           openModal={modal}
           closeModal={() => setModal(false)}
           modalData={modalInfo}
+          setModal={setModal}
         />
       )}
     </div>

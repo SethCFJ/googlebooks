@@ -16,6 +16,7 @@ const SearchBar = ({ onSearch, placeholder, buttonText }) => {
         type="text"
         placeholder={placeholder}
         name="search"
+        required
       />
       <button className={styles.button}>{buttonText}</button>
     </form>
