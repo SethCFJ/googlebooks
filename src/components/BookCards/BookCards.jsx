@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./BookCards.module.scss";
 import noCover from "../../assets/noCover.jpg";
+import BookModal from "../BookDialog/BookModal";
+
 const BookCards = ({ bookData }) => {
+  const [modal, setModal] = useState(false);
+  const [modalInfo, setModalInfo] = useState();
   return (
     <div className={styles.container}>
       {bookData.map((data) => (
@@ -33,9 +37,27 @@ const BookCards = ({ bookData }) => {
             {data.volumeInfo.description && (
               <p>{data.volumeInfo.description}</p>
             )}
+            <button
+              onClick={() => {
+                setModal(true);
+                setModalInfo(data);
+                console.log("open modal clicked");
+                console.log(modal);
+              }}
+            >
+              More info
+            </button>
           </div>
         </div>
       ))}
+
+      {modal && (
+        <BookModal
+          openModal={modal}
+          closeModal={() => setModal(false)}
+          modalData={modalInfo}
+        />
+      )}
     </div>
   );
 };

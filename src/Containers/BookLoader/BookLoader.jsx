@@ -3,6 +3,7 @@ import { getBookBySearchTerm } from "../../../services/book-services/book-servic
 import BookCards from "../../components/BookCards/BookCards";
 import spinner from "../../assets/loading.gif";
 import styles from "./BookLoader.module.scss";
+import BookModal from "../../components/BookDialog/BookModal";
 const BookLoader = ({ searchTerm }) => {
   const [bookData, setBookData] = useState(null);
   const [error, setError] = useState(null);
