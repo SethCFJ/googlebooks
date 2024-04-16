@@ -7,7 +7,7 @@ export const getBookBySearchTerm = async (searchTerm) => {
   }
   const data = await response.json();
   const { items } = data;
-  if (data.length === 0) {
+  if (data.totalItems === 0) {
     throw new Error("No books found for search term " + searchTerm);
   }
   return items;
