@@ -20,11 +20,12 @@
 }
 .container {
   width: 80vw;
-  height: 60%;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-color: c.$white c.$light-green;
   @include queries.laptop {
     width: 50vw;
@@ -34,7 +35,8 @@
   }
 }
 .button {
-  height: 7%;
+  height: 30px;
+
   aspect-ratio: 1/1;
   background-color: c.$brown;
   border-radius: 50%;
@@ -49,7 +51,7 @@
     width: 180px;
   }
   @include queries.desktop {
-    width: 300px;
+    width: 200px;
   }
 }
 .list {
